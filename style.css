@@ -1,0 +1,173 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at center, #000 0%, #050505 80%);
+  overflow-x: hidden;
+  transition: background 1s ease;
+}
+
+/* Particle Canvas */
+canvas#particles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #000 0%, #020202 100%);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(17,17,17,0.85);
+  padding: 12px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #00ffe0;
+  transition: 0.3s;
+}
+.header.shrink { padding: 8px 40px; background: rgba(10,10,10,0.95); }
+
+.logo { display: flex; align-items: center; gap: 8px; font-size: 1.4rem; font-weight: 800; color: #fff; }
+.logo span { color: #00ffe0; }
+.logo-img { width: 40px; height: 40px; border-radius: 50%; }
+
+nav ul { list-style: none; display: flex; gap: 25px; }
+nav a { color: #ccc; text-decoration: none; transition: 0.3s; font-weight: 500; }
+nav a:hover { color: #00ffe0; }
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background: url('https://cdn.pixabay.com/photo/2017/08/30/09/37/game-2690576_1280.jpg') center/cover no-repeat fixed;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.65); }
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+.hero h1 span { color: #00ffe0; }
+.hero p { color: #ccc; margin-bottom: 30px; font-size: 1.1rem; }
+.btn {
+  background: #00ffe0; color: #000;
+  padding: 10px 24px; border-radius: 6px;
+  font-weight: 700; text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+.btn:hover { background: #00b8a8; }
+
+/* Section */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+  margin: 60px 0;
+  background: rgba(17,17,17,0.85);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+h2 { color: #00ffe0; font-size: 2rem; margin-bottom: 20px; }
+
+/* Teams */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+  padding-bottom: 15px;
+}
+.card img { width: 100%; height: 250px; object-fit: cover; }
+.card h3 { color: #00ffe0; margin-top: 10px; }
+.card p { color: #aaa; margin-bottom: 10px; }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffe055;
+}
+
+/* Videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.video-card {
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  transition: 0.3s;
+}
+
+.video-card video {
+  width: 100%;
+  border-bottom: 2px solid #00ffe0;
+  display: block;
+}
+
+.video-card h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #00ffe0;
+}
+
+/* Small extra card */
+.small-card {
+  transform: scale(0.9);
+  margin: 0 auto;
+  width: 85%;
+}
+.small-card img { height: 180px; }
+
+/* Contact / Join Us */
+.contact p {
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-btn .btn {
+  text-align: center;
+  padding: 12px 32px;
+  font-size: 1rem;
+}
+
+/* Back to Top */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00ffe0;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffe0;
+  transition: 0.3s;
+  z-index: 999;
+}
+#backToTop:hover { background: #00b8a8; }
+
+footer { background: #0a0a0a; text-align: center; padding: 20px; color: #888; font-size: 0.9rem; }
